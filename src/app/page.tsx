@@ -38,7 +38,7 @@ export default function Home() {
       <Signature />
       <About compact />
       <Gallery compact />
-      <div className="section-link-wrap"><Link className="button button-secondary" href="/gallery">{content.ui.viewGallery}</Link></div>
+      <div className="section-link-wrap [&.section-link-wrap]:[display:flex] [&.section-link-wrap]:[justify-content:center] [&.section-link-wrap]:[padding:0_1rem_3rem]"><Link className="button button-secondary [&.button]:[display:inline-flex] [&.button]:[min-height:3rem] [&.button]:[align-items:center] [&.button]:[justify-content:center] [&.button]:[gap:0.5rem] [&.button]:[border:1px_solid_var(--theme-primary)] [&.button]:[border-radius:var(--radius)] [&.button]:[padding:0.75rem_1.15rem] [&.button]:[background:var(--theme-primary)] [&.button]:[color:var(--theme-primary-foreground)] [&.button]:[font-size:0.9rem] [&.button]:[font-weight:700] [&.button]:[text-align:center] [&.button]:[transition:background-color_160ms_ease,_border-color_160ms_ease,_transform_160ms_ease] [&.button]:[cursor:pointer] [&.button:hover]:[border-color:var(--theme-primary-hover)] [&.button:hover]:[background:var(--theme-primary-hover)] [&.button:hover]:[transform:translateY(-1px)] [&.button]:[font-size:1rem] [&.button-secondary]:[border-color:var(--theme-border)] [&.button-secondary]:[background:transparent] [&.button-secondary]:[color:var(--theme-foreground)] [&.button-secondary:hover]:[border-color:var(--theme-primary)] [&.button-secondary:hover]:[background:var(--theme-surface)]" href="/gallery">{content.ui.viewGallery}</Link></div>
       <Contact compact />
     </main>
   </>;

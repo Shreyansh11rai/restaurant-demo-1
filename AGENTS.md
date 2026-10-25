@@ -11,6 +11,7 @@ Build a static, mobile-first restaurant website in Next.js. Every section has 3 
 - No UI libraries, no animation libraries, no external scripts. Fonts via `next/font/google`.
 - No localStorage or sessionStorage. No API routes. No server actions.
 - Mobile-first CSS. Use `min-width` media queries only (Tailwind `md:` `lg:`).
+- Keep component-specific styling in Tailwind utility classes in the owning component's `className`; `globals.css` is for theme tokens and truly global styles only.
 - Support a base path: all local asset URLs (images, PDFs) go through `withBase()` in `src/lib/withBase.ts`, which prefixes `process.env.NEXT_PUBLIC_BASE_PATH ?? ""`.
 
 ## Pages (exactly these 5, nothing else)
