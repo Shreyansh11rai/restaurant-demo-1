@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="1000" viewBox="0 0 1400 1000">
+  <defs><linearGradient id="room" x2="0" y2="1"><stop stop-color="#6e5842"/><stop offset="1" stop-color="#241c16"/></linearGradient><radialGradient id="lamp"><stop stop-color="#f5c875" stop-opacity=".75"/><stop offset="1" stop-color="#f5c875" stop-opacity="0"/></radialGradient></defs>
+  <rect width="1400" height="1000" fill="url(#room)"/><path d="M0 630h1400v370H0z" fill="#211915"/>
+  <g fill="none" stroke="#9e825d" stroke-width="12" opacity=".5"><path d="M90 100v420M235 100v420M90 140h145M90 290h145M90 440h145"/><path d="M1130 80v420M1280 80v420M1130 130h150M1130 275h150M1130 420h150"/></g>
+  <circle cx="700" cy="340" r="370" fill="url(#lamp)"/>
+  <path d="M610 0h180l-34 108H644z" fill="#c89348"/><path d="M700 108v170" stroke="#d3a55d" stroke-width="8"/>
+  <ellipse cx="700" cy="730" rx="410" ry="100" fill="#906b45"/><path d="M390 730v245M1010 730v245" stroke="#4b3425" stroke-width="48"/>
+  <ellipse cx="700" cy="690" rx="160" ry="35" fill="#f4ead6"/><ellipse cx="700" cy="681" rx="108" ry="22" fill="#a55532"/>
+  <path d="M555 620h-70v-120h70M915 620h70v-120h-70" fill="#392a20"/><path d="M525 500q-35-110 25-130 55 90-25 130M940 500q-20-110 35-130 48 92-35 130" fill="#596e48"/>
+</svg>

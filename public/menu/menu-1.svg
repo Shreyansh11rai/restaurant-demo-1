@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="1200" viewBox="0 0 900 1200">
+  <rect width="900" height="1200" fill="#faf6f0"/><rect x="36" y="36" width="828" height="1128" rx="12" fill="none" stroke="#b8472a" stroke-width="3"/>
+  <circle cx="450" cy="190" r="56" fill="#b8472a"/><path d="M450 150c18 30 36 42 36 70a36 36 0 1 1-72 0c0-28 18-40 36-70Z" fill="#faf6f0"/>
+  <text x="450" y="315" text-anchor="middle" font-family="Georgia,serif" font-size="48" fill="#231f1a">SAMPLE MENU</text>
+  <text x="450" y="360" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" letter-spacing="5" fill="#b8472a">REPLACE THIS ARTWORK BEFORE LAUNCH</text>
+  <g font-family="Georgia,serif" fill="#231f1a"><text x="100" y="480" font-size="34">To begin</text><text x="100" y="545" font-size="22">Charred paneer tikka</text><text x="790" y="545" text-anchor="end" font-size="22">₹420</text><text x="100" y="582" font-family="Arial,sans-serif" font-size="17" fill="#62594f">Green chutney, lime</text><text x="100" y="660" font-size="22">Tandoori cauliflower</text><text x="790" y="660" text-anchor="end" font-size="22">₹340</text><text x="100" y="697" font-family="Arial,sans-serif" font-size="17" fill="#62594f">Mint yoghurt, toasted sesame</text><text x="100" y="775" font-size="22">Crisp okra</text><text x="790" y="775" text-anchor="end" font-size="22">₹310</text><text x="100" y="812" font-family="Arial,sans-serif" font-size="17" fill="#62594f">Amchur, curry leaf</text></g>
+  <path d="M100 880h700" stroke="#e6dccd" stroke-width="2"/><text x="450" y="970" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" fill="#62594f">Sample artwork — use the data-driven menu for current prices.</text>
+</svg>

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900">
+  <defs><linearGradient id="table" x2="0" y2="1"><stop stop-color="#c6a77e"/><stop offset="1" stop-color="#725138"/></linearGradient></defs>
+  <rect width="1200" height="900" fill="url(#table)"/><path d="M0 660h1200v240H0z" fill="#36271e"/>
+  <ellipse cx="600" cy="560" rx="390" ry="225" fill="#f3ead8"/><ellipse cx="600" cy="540" rx="310" ry="160" fill="#d8c4a0"/>
+  <g fill="#ece1c9" stroke="#c9b99c" stroke-width="8">
+    <circle cx="470" cy="490" r="75"/><circle cx="540" cy="435" r="67"/><circle cx="615" cy="480" r="80"/><circle cx="690" cy="430" r="65"/><circle cx="750" cy="500" r="73"/><circle cx="550" cy="555" r="75"/><circle cx="660" cy="565" r="78"/>
+  </g>
+  <g fill="#526b43"><path d="M445 590q-70-84-107-36 43 88 107 36M730 600q67-81 108-29-44 90-108 29M585 625q-20-82-67-74-3 85 67 74"/></g>
+  <g fill="#c08a4a"><circle cx="490" cy="465" r="10"/><circle cx="662" cy="505" r="12"/><circle cx="582" cy="536" r="9"/><circle cx="727" cy="461" r="8"/></g>
+</svg>
