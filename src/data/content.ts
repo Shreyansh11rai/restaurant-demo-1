@@ -13,7 +13,8 @@ export const content = {
     email: "hello@saffronandstone.example",
     address: "18, Garden Lane, Indiranagar",
     city: "Bengaluru, Karnataka",
-    mapEmbedUrl: "https://www.google.com/maps?q=Indiranagar%2C+Bengaluru&output=embed",
+    mapEmbedUrl:
+      "https://www.google.com/maps?q=Indiranagar%2C+Bengaluru&output=embed",
     mapLink: "https://maps.google.com/?q=Indiranagar%2C+Bengaluru",
     hours: [
       { days: "Monday - Friday", time: "12:00 PM - 10:30 PM" },
@@ -35,7 +36,7 @@ export const content = {
   ],
   ui: {
     book: "Book a table",
-    bookWhatsApp: "Book on WhatsApp",
+    bookWhatsApp: "WhatsApp",
     viewMenu: "Explore the menu",
     readStory: "Read our story",
     viewGallery: "View the gallery",
@@ -88,7 +89,11 @@ export const content = {
     subtext:
       "Seasonal ingredients, familiar flavours and a warm seat waiting for you.",
     image: "/images/restaurant-interior.webp",
-    slides: ["/images/restaurant-interior.webp", "/images/dish-table.webp", "/images/dish-plated.webp"],
+    slides: [
+      "/images/restaurant-interior.webp",
+      "/images/dish-table.webp",
+      "/images/dish-plated.webp",
+    ],
     primaryCta: { label: "Explore the menu", href: "/menu" },
     secondaryCta: { label: "Book on WhatsApp", action: "whatsapp" },
   },
@@ -124,9 +129,18 @@ export const content = {
     image: "/images/restaurant-interior.webp",
     quote: "Good food tastes even better when there is enough to share.",
     highlights: [
-      { title: "Season-led", text: "Fresh produce guides what comes out of our kitchen." },
-      { title: "Made by hand", text: "House-ground spices and patient cooking, every day." },
-      { title: "Room for all", text: "A welcoming table for long lunches and easy evenings." },
+      {
+        title: "Season-led",
+        text: "Fresh produce guides what comes out of our kitchen.",
+      },
+      {
+        title: "Made by hand",
+        text: "House-ground spices and patient cooking, every day.",
+      },
+      {
+        title: "Room for all",
+        text: "A welcoming table for long lunches and easy evenings.",
+      },
     ],
     stats: [
       { value: "2018", label: "Our first table" },
@@ -140,48 +154,148 @@ export const content = {
       {
         name: "To begin",
         items: [
-          { name: "Charred paneer tikka", description: "Green chutney, lime", price: "₹420", veg: true, tags: ["House favourite"] },
-          { name: "Tandoori cauliflower", description: "Mint yoghurt, toasted sesame", price: "₹340", veg: true, tags: [] },
-          { name: "Crisp okra", description: "Amchur, curry leaf", price: "₹310", veg: true, tags: [] },
+          {
+            name: "Charred paneer tikka",
+            description: "Green chutney, lime",
+            price: "₹420",
+            veg: true,
+            tags: ["House favourite"],
+          },
+          {
+            name: "Tandoori cauliflower",
+            description: "Mint yoghurt, toasted sesame",
+            price: "₹340",
+            veg: true,
+            tags: [],
+          },
+          {
+            name: "Crisp okra",
+            description: "Amchur, curry leaf",
+            price: "₹310",
+            veg: true,
+            tags: [],
+          },
         ],
       },
       {
         name: "From the kitchen",
         items: [
-          { name: "Slow-cooked dal", description: "Black lentils, cultured butter", price: "₹390", veg: true, tags: ["Slow cooked"] },
-          { name: "Paneer makhani", description: "Tomato, fenugreek, cream", price: "₹460", veg: true, tags: [] },
-          { name: "Seasonal vegetable curry", description: "Today's market vegetables", price: "₹380", veg: true, tags: [] },
+          {
+            name: "Slow-cooked dal",
+            description: "Black lentils, cultured butter",
+            price: "₹390",
+            veg: true,
+            tags: ["Slow cooked"],
+          },
+          {
+            name: "Paneer makhani",
+            description: "Tomato, fenugreek, cream",
+            price: "₹460",
+            veg: true,
+            tags: [],
+          },
+          {
+            name: "Seasonal vegetable curry",
+            description: "Today's market vegetables",
+            price: "₹380",
+            veg: true,
+            tags: [],
+          },
         ],
       },
       {
         name: "Something sweet",
         items: [
-          { name: "Cardamom kulfi", description: "Pistachio, rose", price: "₹220", veg: true, tags: [] },
-          { name: "Warm jaggery cake", description: "Vanilla cream, sesame brittle", price: "₹260", veg: true, tags: [] },
+          {
+            name: "Cardamom kulfi",
+            description: "Pistachio, rose",
+            price: "₹220",
+            veg: true,
+            tags: [],
+          },
+          {
+            name: "Warm jaggery cake",
+            description: "Vanilla cream, sesame brittle",
+            price: "₹260",
+            veg: true,
+            tags: [],
+          },
         ],
       },
     ],
     files: [
-      { label: "Download the menu", file: "/menu/menu.pdf", type: "pdf" as const },
-      { label: "Menu page one", file: "/menu/menu-1.svg", type: "image" as const },
-      { label: "Menu page two", file: "/menu/menu-2.svg", type: "image" as const },
+      {
+        label: "Download the menu",
+        file: "/menu/menu.pdf",
+        type: "pdf" as const,
+      },
+      {
+        label: "Menu page one",
+        file: "/menu/menu-1.svg",
+        type: "image" as const,
+      },
+      {
+        label: "Menu page two",
+        file: "/menu/menu-2.svg",
+        type: "image" as const,
+      },
     ],
   },
   gallery: [
-    { src: "/images/dish-curry.webp", alt: "A warmly spiced curry served with fresh herbs", category: "food" },
-    { src: "/images/restaurant-interior.webp", alt: "A welcoming restaurant dining room", category: "space" },
-    { src: "/images/dish-bowl.webp", alt: "A colorful bowl of fresh seasonal ingredients", category: "food" },
-    { src: "/images/dish-plated.webp", alt: "A carefully plated restaurant dish", category: "food" },
-    { src: "/images/dish-table.webp", alt: "A table set with a variety of freshly prepared dishes", category: "food" },
+    {
+      src: "/images/dish-curry.webp",
+      alt: "A warmly spiced curry served with fresh herbs",
+      category: "food",
+    },
+    {
+      src: "/images/restaurant-interior.webp",
+      alt: "A welcoming restaurant dining room",
+      category: "space",
+    },
+    {
+      src: "/images/dish-bowl.webp",
+      alt: "A colorful bowl of fresh seasonal ingredients",
+      category: "food",
+    },
+    {
+      src: "/images/dish-plated.webp",
+      alt: "A carefully plated restaurant dish",
+      category: "food",
+    },
+    {
+      src: "/images/dish-table.webp",
+      alt: "A table set with a variety of freshly prepared dishes",
+      category: "food",
+    },
   ],
   seo: {
     siteUrl: "https://saffronandstone.example",
     pages: {
-      home: { title: "Saffron & Stone | A table for every story", description: "Seasonal Indian cooking, familiar flavours and a warm neighbourhood welcome in Bengaluru." },
-      menu: { title: "Menu | Saffron & Stone", description: "Explore our seasonal menu of Indian favourites, made for sharing." },
-      gallery: { title: "Gallery | Saffron & Stone", description: "A little look inside the Saffron & Stone table and kitchen." },
-      about: { title: "Our story | Saffron & Stone", description: "Meet the people, produce and idea behind Saffron & Stone." },
-      contact: { title: "Visit us | Saffron & Stone", description: "Find Saffron & Stone in Bengaluru or send a table reservation request." },
+      home: {
+        title: "Saffron & Stone | A table for every story",
+        description:
+          "Seasonal Indian cooking, familiar flavours and a warm neighbourhood welcome in Bengaluru.",
+      },
+      menu: {
+        title: "Menu | Saffron & Stone",
+        description:
+          "Explore our seasonal menu of Indian favourites, made for sharing.",
+      },
+      gallery: {
+        title: "Gallery | Saffron & Stone",
+        description:
+          "A little look inside the Saffron & Stone table and kitchen.",
+      },
+      about: {
+        title: "Our story | Saffron & Stone",
+        description:
+          "Meet the people, produce and idea behind Saffron & Stone.",
+      },
+      contact: {
+        title: "Visit us | Saffron & Stone",
+        description:
+          "Find Saffron & Stone in Bengaluru or send a table reservation request.",
+      },
     },
     ogImage: "/images/restaurant-interior.webp",
   },

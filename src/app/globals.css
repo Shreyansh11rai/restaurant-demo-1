@@ -1189,6 +1189,7 @@ h3 {
   bottom: calc(1rem + env(safe-area-inset-bottom));
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   gap: 0.6rem;
 }
 .action-round {
@@ -1220,7 +1221,7 @@ h3 {
   box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.12);
 }
 .actions-two .action-round {
-  width: 50%;
+  width: 47%;
   height: 2.8rem;
   border-radius: var(--radius);
   box-shadow: none;
