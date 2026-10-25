@@ -33,6 +33,7 @@ body {
   background: var(--theme-canvas);
   color: var(--theme-foreground);
   font-family: var(--font-body);
+  font-size: 16px;
   line-height: 1.6;
 }
 body,
@@ -175,6 +176,7 @@ h3 {
   border-bottom: 1px solid var(--theme-border);
   background: var(--theme-surface);
   color: var(--theme-foreground);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.06);
 }
 .header-inner {
   width: min(100% - 2rem, 1280px);
@@ -203,7 +205,7 @@ h3 {
   margin-top: 0.25rem;
   color: var(--theme-muted);
   font-family: var(--font-body);
-  font-size: 0.65rem;
+  font-size: 0.875rem;
   font-weight: 500;
   letter-spacing: 0.04em;
 }
@@ -241,14 +243,17 @@ h3 {
   background: var(--theme-surface);
   opacity: 0;
   pointer-events: none;
+  visibility: hidden;
   transform: translateY(-0.5rem);
   transition:
     opacity 180ms ease,
-    transform 180ms ease;
+    transform 180ms ease,
+    visibility 180ms;
 }
 .mobile-menu.is-open {
   opacity: 1;
   pointer-events: auto;
+  visibility: visible;
   transform: translateY(0);
 }
 .mobile-menu nav {
@@ -257,7 +262,7 @@ h3 {
 }
 .mobile-menu nav a {
   padding: 0.75rem 0;
-  font-size: 1.15rem;
+  font-size: 1rem;
 }
 .mobile-menu-close {
   position: absolute;
@@ -286,22 +291,24 @@ h3 {
   align-self: center;
 }
 .header-2 {
-  position: absolute;
+  /* position: absolute; */
   inset: 0 0 auto;
-  background: transparent;
+  background: var(--theme-canvas);
   border-color: transparent;
-  color: white;
+  color: var(--theme-foreground);
 }
 .header-2.is-scrolled {
   position: fixed;
+  inset: 0 0 auto;
   background: var(--theme-surface);
   border-color: var(--theme-border);
   color: var(--theme-foreground);
 }
 .header-2 .header-inner {
-  display: none;
+  display: flex;
 }
 .header-split {
+  display: none;
   width: min(100% - 2rem, 1280px);
   min-height: 5.5rem;
   margin: auto;
@@ -314,7 +321,7 @@ h3 {
   gap: clamp(0.7rem, 2vw, 2rem);
 }
 .header-split > div a {
-  font-size: 0.85rem;
+  font-size: 0.875rem;
 }
 .centered-brand {
   display: flex;
@@ -325,7 +332,7 @@ h3 {
 }
 .centered-brand small {
   font-family: var(--font-body);
-  font-size: 0.65rem;
+  font-size: 0.875rem;
   font-weight: 400;
 }
 .header-2.is-scrolled .centered-brand small {
@@ -1247,10 +1254,55 @@ h3 {
   font-size: clamp(2.8rem, 10vw, 5rem);
 }
 
+.section-title {
+  margin-bottom: 2.5rem;
+}
+.button {
+  font-size: 1rem;
+}
+.eyebrow,
+.brand-lockup small,
+.centered-brand small,
+.hero-side-note,
+.hero-chips span,
+.hero-hours .hours-block h3,
+.dish-copy p,
+.stats-row span,
+.download-button,
+.file-tag,
+.menu-tabs button,
+.menu-jump a,
+.menu-item > p,
+.menu-note,
+.menu-tag,
+.menu-price-row,
+.hours-block dl > div,
+.reservation-form label,
+.footer-columns nav h2,
+.social-links,
+.copyright,
+.action-round span {
+  font-size: 0.875rem;
+}
+.dish-card,
+.menu-card,
+.contact-info,
+.reservation-form {
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.045);
+}
+.dish-copy {
+  padding: 1.4rem;
+}
+.reservation-form input,
+.reservation-form textarea,
+.reservation-form select {
+  font-size: 1rem;
+}
+
 @media (min-width: 700px) {
   .section {
     width: min(100% - 4rem, 1180px);
-    padding: 6rem 0;
+    padding: 6.5rem 0;
   }
   .signature-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1376,6 +1428,9 @@ h3 {
   }
   .header-2 .header-inner {
     display: none;
+  }
+  .header-2 .header-split {
+    display: flex;
   }
   .menu-toggle {
     display: none;
