@@ -7,6 +7,7 @@ import About from "@/components/sections/about";
 import Gallery from "@/components/sections/gallery";
 import Contact from "@/components/sections/contact";
 import { withBase } from "@/lib/withBase";
+import { ImNewTab } from "react-icons/im";
 
 export function generateMetadata() {
   return createPageMetadata("home", "/");
@@ -24,22 +25,44 @@ function RestaurantJsonLd() {
     },
     telephone: content.contact.phone,
     servesCuisine: content.brand.cuisine,
-    openingHours: content.contact.hours.map((entry) => `${entry.days} ${entry.time}`),
-    menu: new URL(withBase("/menu/"), `${content.seo.siteUrl.replace(/\/$/, "")}/`).toString(),
+    openingHours: content.contact.hours.map(
+      (entry) => `${entry.days} ${entry.time}`,
+    ),
+    menu: new URL(
+      withBase("/menu/"),
+      `${content.seo.siteUrl.replace(/\/$/, "")}/`,
+    ).toString(),
   };
-  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }} />;
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{
+        __html: JSON.stringify(schema).replace(/</g, "\\u003c"),
+      }}
+    />
+  );
 }
 
 export default function Home() {
-  return <>
-    <RestaurantJsonLd />
-    <main id="main-content">
-      <Hero />
-      <Signature />
-      <About compact />
-      <Gallery compact />
-      <div className="section-link-wrap [&.section-link-wrap]:[display:flex] [&.section-link-wrap]:[justify-content:center] [&.section-link-wrap]:[padding:0_1rem_3rem]"><Link className="button button-secondary [&.button]:[display:inline-flex] [&.button]:[min-height:3rem] [&.button]:[align-items:center] [&.button]:[justify-content:center] [&.button]:[gap:0.5rem] [&.button]:[border:1px_solid_var(--theme-primary)] [&.button]:[border-radius:var(--radius)] [&.button]:[padding:0.75rem_1.15rem] [&.button]:[background:var(--theme-primary)] [&.button]:[color:var(--theme-primary-foreground)] [&.button]:[font-size:0.9rem] [&.button]:[font-weight:700] [&.button]:[text-align:center] [&.button]:[transition:background-color_160ms_ease,_border-color_160ms_ease,_transform_160ms_ease] [&.button]:[cursor:pointer] [&.button:hover]:[border-color:var(--theme-primary-hover)] [&.button:hover]:[background:var(--theme-primary-hover)] [&.button:hover]:[transform:translateY(-1px)] [&.button]:[font-size:1rem] [&.button-secondary]:[border-color:var(--theme-border)] [&.button-secondary]:[background:transparent] [&.button-secondary]:[color:var(--theme-foreground)] [&.button-secondary:hover]:[border-color:var(--theme-primary)] [&.button-secondary:hover]:[background:var(--theme-surface)]" href="/gallery">{content.ui.viewGallery}</Link></div>
-      <Contact compact />
-    </main>
-  </>;
+  return (
+    <>
+      <RestaurantJsonLd />
+      <main id="main-content">
+        <Hero />
+        <Signature />
+        <About compact />
+        <Gallery compact />
+        <div className="section-link-wrap flex justify-center p-0">
+          <Link
+            className="button button-secondary inline-flex min-h-12 items-center justify-center gap-2 border border-primary rounded-theme p-3 text-base font-bold text-center transition-all cursor-pointer hover:border-primary-hover hover:bg-primary-hover hover:-translate-y-0.5 border-border bg-transparent text-primary hover:border-primary hover:bg-surface"
+            href="/gallery"
+          >
+            <ImNewTab />
+            {content.ui.viewGallery}
+          </Link>
+        </div>
+        <Contact compact />
+      </main>
+    </>
+  );
 }

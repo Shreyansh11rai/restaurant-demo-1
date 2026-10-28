@@ -58,7 +58,10 @@ export default function RootLayout({
         <style>{`:root{${themeStyle}}`}</style>
       </head>
       <body>
-        <a className="skip-link [&.skip-link]:[position:fixed] [&.skip-link]:[z-index:100] [&.skip-link]:[top:0.5rem] [&.skip-link]:[left:0.5rem] [&.skip-link]:[transform:translateY(-160%)] [&.skip-link]:[background:var(--theme-surface)] [&.skip-link]:[padding:0.8rem_1rem] [&.skip-link:focus]:[transform:translateY(0)]" href="#main-content">
+        <a
+          className="skip-link fixed z-50 top-2 left-2  bg-surface p-3 focus:translate-y-0 -translate-y-full"
+          href="#main-content"
+        >
           Skip to content
         </a>
         <Header />

@@ -14,15 +14,16 @@ Build a static, mobile-first restaurant website in Next.js. Every section has 3 
 - Keep component-specific styling in Tailwind utility classes in the owning component's `className`; `globals.css` is for theme tokens and truly global styles only.
 - Support a base path: all local asset URLs (images, PDFs) go through `withBase()` in `src/lib/withBase.ts`, which prefixes `process.env.NEXT_PUBLIC_BASE_PATH ?? ""`.
 
-## Pages (exactly these 5, nothing else)
+## Pages (exactly these 6, nothing else)
 
-| Route      | Contents                                                                                        |
-| ---------- | ----------------------------------------------------------------------------------------------- |
-| `/` Home   | Hero, Signature dishes, About (compact), Gallery (first 6, link to /gallery), Contact (compact) |
-| `/menu`    | Menu section + download buttons                                                                 |
-| `/gallery` | Gallery section (all images)                                                                    |
-| `/about`   | About section (full)                                                                            |
-| `/contact` | Contact section (full: info, reservation form, map)                                             |
+| Route           | Contents                                                                                        |
+| --------------- | ----------------------------------------------------------------------------------------------- |
+| `/` Home        | Hero, Signature dishes, About (compact), Gallery (first 6, link to /gallery), Contact (compact) |
+| `/menu`         | Menu section + download buttons                                                                 |
+| `/gallery`      | Gallery section (all images)                                                                    |
+| `/about`        | About section (full)                                                                            |
+| `/testimonials` | Guest testimonials                                                                              |
+| `/contact`      | Contact section (full: info, reservation form, map)                                             |
 
 Every page also renders Header, Footer and Floating Actions. Do not add other pages (no blog, no offers page, no cart, no login).
 
@@ -42,6 +43,7 @@ src/
       hero/      Hero1.tsx Hero2.tsx Hero3.tsx index.tsx
       signature/ Signature1.tsx Signature2.tsx Signature3.tsx index.tsx
       about/     About1.tsx About2.tsx About3.tsx index.tsx
+      testimonials/ Testimonials1.tsx Testimonials2.tsx Testimonials3.tsx index.tsx
       menu/      Menu1.tsx Menu2.tsx Menu3.tsx index.tsx
       gallery/   Gallery1.tsx Gallery2.tsx Gallery3.tsx index.tsx
       contact/   Contact1.tsx Contact2.tsx Contact3.tsx index.tsx
@@ -50,7 +52,7 @@ src/
     ui/          Lightbox.tsx, Button.tsx, DownloadMenuButtons.tsx, SectionTitle.tsx
   app/
     layout.tsx, page.tsx, sitemap.ts, robots.ts
-    menu/page.tsx, gallery/page.tsx, about/page.tsx, contact/page.tsx
+    menu/page.tsx, gallery/page.tsx, about/page.tsx, testimonials/page.tsx, contact/page.tsx
 public/
   images/    <- all site images
   menu/      <- menu.pdf and menu page images (menu-1.jpg, menu-2.jpg ...)
@@ -165,6 +167,7 @@ export const content = {
       menu: { title: "", description: "" },
       gallery: { title: "", description: "" },
       about: { title: "", description: "" },
+      testimonials: { title: "", description: "" },
       contact: { title: "", description: "" },
     },
     ogImage: "/images/og.jpg",
@@ -258,7 +261,7 @@ Derive `--theme-primary-hover`, `--theme-surface-muted`, `--theme-muted` and `--
 ## SEO and performance
 
 - Per-page `generateMetadata` from `content.seo`. Add canonical, Open Graph and Twitter tags.
-- `sitemap.ts` and `robots.ts` for the 5 pages, using `seo.siteUrl`.
+- `sitemap.ts` and `robots.ts` for the 6 pages, using `seo.siteUrl`.
 - Add `Restaurant` JSON-LD (name, address, phone, hours, cuisine, menu URL) on the Home page, built from the data file.
 - Hero image: `fetchPriority="high"`, no lazy loading. All other images: `loading="lazy"`, `decoding="async"`, explicit `width` and `height`.
 - No layout shift. Accessible names on all buttons and links. One `<h1>` per page.
@@ -277,7 +280,7 @@ Derive `--theme-primary-hover`, `--theme-surface-muted`, `--theme-muted` and `--
 ## Done when
 
 - `npm run build` succeeds for the default config and for each of these: every `layout` key set to 2, then to 3, and each `theme` value.
-- All 5 pages render with sample data and no console errors.
+- All 6 pages render with sample data and no console errors.
 - Menu PDF and image downloads work, including under a non-empty `NEXT_PUBLIC_BASE_PATH`.
 - Searching `src/components` finds no hardcoded phone numbers, prices or business names.
 - Lighthouse mobile: Performance 90+, Accessibility 95+, SEO 95+ on the Home page.

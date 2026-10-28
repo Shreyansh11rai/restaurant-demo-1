@@ -1,15 +1,48 @@
 import { content } from "@/data/content";
 import { ContactInfo, MapEmbed, ReservationForm } from "./ContactPieces";
+import { BsWhatsapp } from "react-icons/bs";
+import { BiPhone } from "react-icons/bi";
 
 export default function Contact1({ compact = false }: { compact?: boolean }) {
-  return <section className={`section contact-section contact-one${compact ? " contact-compact" : ""} [&.section]:[width:min(100%_-_2.5rem,_1180px)] [&.section]:[margin:0_auto] [&.section]:[padding:5rem_0] min-[700px]:[&.section]:[width:min(100%_-_4rem,_1180px)] min-[700px]:[&.section]:[padding:6.5rem_0] [&.contact-section]:[padding-bottom:5rem] [&.contact-compact]:[width:min(100%_-_2.5rem,_1180px)] [&.contact-compact]:[margin:0_auto] [&.contact-compact]:[padding:3rem_0] [&.section.contact-compact]:[padding:3rem_0] min-[700px]:[&.section.contact-compact]:[padding:6.5rem_0] [&.contact-compact_.contact-info]:[max-width:560px] [&.contact-compact_.contact-info_h2]:[margin-bottom:0.8rem] [&.contact-compact_.hours-block]:[margin-top:1.2rem] [&.contact-compact_.contact-actions_.button]:[flex:1]`}>
-    {compact ? <ContactInfo showActions={false} /> : <>
-      <div className="contact-split [&.contact-split]:[display:grid] [&.contact-split]:[gap:1rem] [&.contact-split_.contact-info]:[align-self:stretch] min-[700px]:[&.contact-split]:[grid-template-columns:0.85fr_1.15fr]"><ContactInfo /><MapEmbed /></div>
-      <ReservationForm />
-    </>}
-    {compact ? <div className="contact-actions [&.contact-actions]:[display:flex] [&.contact-actions]:[flex-wrap:wrap] [&.contact-actions]:[gap:0.55rem] [&.contact-actions]:[margin-top:1.5rem]">
-      {content.contact.phone ? <a className="button [&.button]:[display:inline-flex] [&.button]:[min-height:3rem] [&.button]:[align-items:center] [&.button]:[justify-content:center] [&.button]:[gap:0.5rem] [&.button]:[border:1px_solid_var(--theme-primary)] [&.button]:[border-radius:var(--radius)] [&.button]:[padding:0.75rem_1.15rem] [&.button]:[background:var(--theme-primary)] [&.button]:[color:var(--theme-primary-foreground)] [&.button]:[font-size:0.9rem] [&.button]:[font-weight:700] [&.button]:[text-align:center] [&.button]:[transition:background-color_160ms_ease,_border-color_160ms_ease,_transform_160ms_ease] [&.button]:[cursor:pointer] [&.button:hover]:[border-color:var(--theme-primary-hover)] [&.button:hover]:[background:var(--theme-primary-hover)] [&.button:hover]:[transform:translateY(-1px)] [&.button]:[font-size:1rem]" href={`tel:${content.contact.phone}`}>{content.ui.call}</a> : null}
-      <a className="button button-secondary [&.button]:[display:inline-flex] [&.button]:[min-height:3rem] [&.button]:[align-items:center] [&.button]:[justify-content:center] [&.button]:[gap:0.5rem] [&.button]:[border:1px_solid_var(--theme-primary)] [&.button]:[border-radius:var(--radius)] [&.button]:[padding:0.75rem_1.15rem] [&.button]:[background:var(--theme-primary)] [&.button]:[color:var(--theme-primary-foreground)] [&.button]:[font-size:0.9rem] [&.button]:[font-weight:700] [&.button]:[text-align:center] [&.button]:[transition:background-color_160ms_ease,_border-color_160ms_ease,_transform_160ms_ease] [&.button]:[cursor:pointer] [&.button:hover]:[border-color:var(--theme-primary-hover)] [&.button:hover]:[background:var(--theme-primary-hover)] [&.button:hover]:[transform:translateY(-1px)] [&.button]:[font-size:1rem] [&.button-secondary]:[border-color:var(--theme-border)] [&.button-secondary]:[background:transparent] [&.button-secondary]:[color:var(--theme-foreground)] [&.button-secondary:hover]:[border-color:var(--theme-primary)] [&.button-secondary:hover]:[background:var(--theme-surface)]" href={`https://wa.me/${content.contact.whatsapp}`} target="_blank" rel="noreferrer">{content.ui.bookWhatsApp}</a>
-    </div> : null}
-  </section>;
+  return (
+    <section
+      className={`section mx-auto w-page max-w-site py-20 contact-section contact-one ${compact ? "contact-compact" : ""}`}
+    >
+      {compact ? (
+        <ContactInfo showActions={false} />
+      ) : (
+        <>
+          <div className="contact-split grid gap-4 md:grid-cols-2">
+            <ContactInfo />
+            <MapEmbed />
+          </div>
+          <ReservationForm />
+        </>
+      )}
+      {compact ? (
+        <div className="contact-actions flex flex-wrap gap-2 mt-6">
+          {content.contact.phone ? (
+            <a
+              className="button inline-flex min-h-12 items-center justify-center gap-2 border border-primary rounded-theme p-3 bg-primary text-primary-foreground text-base font-bold text-center transition-all cursor-pointer hover:border-primary-hover hover:bg-primary-hover hover:-translate-y-0.5"
+              href={`tel:${content.contact.phone}`}
+            >
+              <BiPhone />
+              {content.ui.call}
+            </a>
+          ) : null}
+          {content.contact.whatsapp ? (
+            <a
+              className="button button-secondary inline-flex min-h-12 items-center justify-center gap-2 rounded-theme border border-border bg-transparent px-5 py-3 text-center text-base font-bold text-foreground transition-colors hover:border-primary hover:bg-surface"
+              href={`https://wa.me/${content.contact.whatsapp}`}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <BsWhatsapp fill="green" />
+              {content.ui.bookWhatsApp}
+            </a>
+          ) : null}
+        </div>
+      ) : null}
+    </section>
+  );
 }

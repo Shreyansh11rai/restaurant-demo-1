@@ -5,9 +5,19 @@ import { withBase } from "@/lib/withBase";
 export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const paths = ["/", "/menu/", "/gallery/", "/about/", "/contact/"];
+  const paths = [
+    "/",
+    "/menu/",
+    "/gallery/",
+    "/about/",
+    "/testimonials/",
+    "/contact/",
+  ];
   return paths.map((path) => ({
-    url: new URL(withBase(path), `${content.seo.siteUrl.replace(/\/$/, "")}/`).toString(),
+    url: new URL(
+      withBase(path),
+      `${content.seo.siteUrl.replace(/\/$/, "")}/`,
+    ).toString(),
     lastModified: new Date(),
   }));
 }

@@ -1,7 +1,7 @@
 export const content = {
   brand: {
-    name: "Saffron & Stone",
-    tagline: "A table for every story.",
+    name: "Taste Spoon",
+    tagline: "The taste of varanasi.",
     logo: "/images/brand-mark.svg",
     cuisine: "Contemporary Indian",
     established: "Est. 2018",
@@ -11,8 +11,8 @@ export const content = {
     whatsapp: "919876543210",
     whatsappGreeting: "Hello, I'd like to book a table.",
     email: "hello@saffronandstone.example",
-    address: "18, Garden Lane, Indiranagar",
-    city: "Bengaluru, Karnataka",
+    address: "Phoolpur, Pindra, Varanasi, Uttar Pradesh Pin:221206",
+    city: "Varanasi, Uttar Pradesh",
     mapEmbedUrl:
       "https://www.google.com/maps?q=Indiranagar%2C+Bengaluru&output=embed",
     mapLink: "https://maps.google.com/?q=Indiranagar%2C+Bengaluru",
@@ -22,16 +22,17 @@ export const content = {
     ],
   },
   social: {
-    facebook: "",
+    facebook: "https://instagram.com/",
     instagram: "https://instagram.com/",
-    linkedin: "",
-    x: "",
+    linkedin: "https://instagram.com/",
+    x: "https://instagram.com/",
   },
   navigation: [
     { label: "Home", href: "/" },
     { label: "Menu", href: "/menu" },
     { label: "Our story", href: "/about" },
     { label: "Gallery", href: "/gallery" },
+    { label: "Testimonials", href: "/testimonials" },
     { label: "Contact", href: "/contact" },
   ],
   ui: {
@@ -67,6 +68,9 @@ export const content = {
     exploreDishes: "A few house favourites",
     aboutHeading: "Rooted in warmth, made for sharing",
     galleryHeading: "A taste of the table",
+    testimonialsHeading: "A word from the table",
+    testimonialsIntro:
+      "These sample testimonials are placeholders. Replace them with approved guest feedback before publishing.",
     contactHeading: "Come on in",
     menuHeading: "Made to be passed around",
     backToTop: "Back to top",
@@ -268,6 +272,23 @@ export const content = {
       category: "food",
     },
   ],
+  testimonials: [
+    {
+      quote: "Sample testimonial",
+      name: "Sample guest",
+      detail: "Add visit detail",
+    },
+    {
+      quote: "Sample testimonial",
+      name: "Sample guest",
+      detail: "Add visit detail",
+    },
+    {
+      quote: "Sample testimonial",
+      name: "Sample guest",
+      detail: "Add visit detail",
+    },
+  ],
   seo: {
     siteUrl: "https://saffronandstone.example",
     pages: {
@@ -290,6 +311,11 @@ export const content = {
         title: "Our story | Saffron & Stone",
         description:
           "Meet the people, produce and idea behind Saffron & Stone.",
+      },
+      testimonials: {
+        title: "Guest stories | Saffron & Stone",
+        description:
+          "Read what guests have to say about their time at Saffron & Stone.",
       },
       contact: {
         title: "Visit us | Saffron & Stone",

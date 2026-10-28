@@ -1,93 +1,132 @@
 @import "tailwindcss";
 @source "../";
 
+@theme inline {
+  --color-canvas: var(--theme-canvas);
+  --color-surface: var(--theme-surface);
+  --color-surface-muted: var(--theme-surface-muted);
+  --color-foreground: var(--theme-foreground);
+  --color-muted: var(--theme-muted);
+  --color-border: var(--theme-border);
+  --color-primary: var(--theme-primary);
+  --color-primary-hover: var(--theme-primary-hover);
+  --color-primary-foreground: var(--theme-primary-foreground);
+  --color-accent: var(--theme-accent);
+  --color-theme-overlay: var(--theme-overlay);
+  --color-overlay-foreground: var(--theme-overlay-foreground);
+  --font-display: var(--theme-font-display);
+  --font-body: var(--theme-font-body);
+  --radius-theme: var(--theme-radius);
+  --container-site: 73.75rem;
+  --container-header: 80rem;
+  --container-wide-copy: 47.5rem;
+  --container-hero-copy: 52.5rem;
+  --container-about-copy: 47.5rem;
+  --container-heading: 53.75rem;
+  --container-menu: 65rem;
+  --container-form: 46.25rem;
+  --spacing-page: calc(100% - 2.5rem);
+  --spacing-page-wide: calc(100% - 4rem);
+  --spacing-page-header: calc(100% - 2rem);
+  --spacing-action-safe: calc(1rem + env(safe-area-inset-bottom));
+  --spacing-action-bar-safe: calc(0.55rem + env(safe-area-inset-bottom));
+  --spacing-hero: min(760px, calc(100svh - 4.5rem));
+  --spacing-hero-wide: min(800px, 92svh);
+  --breakpoint-md: 43.75rem;
+  --breakpoint-lg: 60rem;
+  --shadow-card: 0 8px 28px rgb(0 0 0 / 5%);
+  --animate-slide-0: slideshow-fade 15s infinite 0s;
+  --animate-slide-1: slideshow-fade 15s infinite 5s;
+  --animate-slide-2: slideshow-fade 15s infinite 10s;
+}
+
 :root {
   color-scheme: light;
-  --font-display: var(--font-fraunces), Georgia, serif;
-  --font-body: var(--font-dm-sans), Arial, sans-serif;
 }
 
 .theme-royal {
-  --font-display: var(--font-cormorant), Georgia, serif;
-  --font-body: var(--font-inter), Arial, sans-serif;
+  --theme-font-display: var(--font-cormorant), Georgia, serif;
+  --theme-font-body: var(--font-inter), Arial, sans-serif;
 }
 
 .theme-modern {
-  --font-display: var(--font-fraunces), Georgia, serif;
-  --font-body: var(--font-dm-sans), Arial, sans-serif;
+  --theme-font-display: var(--font-fraunces), Georgia, serif;
+  --theme-font-body: var(--font-dm-sans), Arial, sans-serif;
 }
 
 .theme-bold {
-  --font-display: var(--font-poppins), Arial, sans-serif;
-  --font-body: var(--font-poppins), Arial, sans-serif;
+  --theme-font-display: var(--font-poppins), Arial, sans-serif;
+  --theme-font-body: var(--font-poppins), Arial, sans-serif;
 }
 
 @layer base {
-* {
-  box-sizing: border-box;
-}
-html {
-  scroll-behavior: smooth;
-}
-body {
-  margin: 0;
-  min-width: 320px;
-  background: var(--theme-canvas);
-  color: var(--theme-foreground);
-  font-family: var(--font-body);
-  font-size: 16px;
-  line-height: 1.6;
-}
-body,
-button,
-input,
-select,
-textarea {
-  font-family: var(--font-body);
-}
-button,
-a {
-  -webkit-tap-highlight-color: transparent;
-}
-a {
-  color: inherit;
-  text-decoration: none;
-}
-button {
-  color: inherit;
-}
-img {
-  display: block;
-  max-width: 100%;
-}
-h1,
-h2,
-h3,
-h4,
-p {
-  margin-top: 0;
-}
-h1,
-h2,
-h3 {
-  font-family: var(--font-display);
-  font-weight: 600;
-  line-height: 1.08;
-}
-h1 {
-  font-size: clamp(3rem, 12vw, 6.4rem);
-  white-space: pre-line;
-}
-h2 {
-  font-size: clamp(2.15rem, 7vw, 4.2rem);
-}
-h3 {
-  font-size: 1.7rem;
-}
-:focus-visible {
-  outline: 3px solid var(--theme-primary);
-  outline-offset: 4px;
-}
+  * {
+    box-sizing: border-box;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    margin: 0;
+    min-width: 320px;
+    background: var(--theme-canvas);
+    color: var(--theme-foreground);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  body,
+  button,
+  input,
+  select,
+  textarea {
+    font-family: var(--font-body);
+  }
+  button,
+  a {
+    -webkit-tap-highlight-color: transparent;
+  }
+  a {
+    color: inherit;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+  }
+  button {
+    color: inherit;
+  }
+  img {
+    display: block;
+    max-width: 100%;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  p {
+    margin-top: 0;
+  }
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    line-height: 1.08;
+  }
+  h1 {
+    font-size: clamp(3rem, 12vw, 6.4rem);
+    white-space: pre-line;
+  }
+  h2 {
+    font-size: clamp(2.15rem, 7vw, 4.2rem);
+  }
+  h3 {
+    font-size: 1.7rem;
+  }
+  :focus-visible {
+    outline: 3px solid var(--theme-primary);
+    outline-offset: 4px;
+  }
 }
 
 @keyframes slideshow-fade {
