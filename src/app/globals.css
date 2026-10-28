@@ -1,5 +1,6 @@
 @import "tailwindcss";
-@source "../";
+@source "./";
+@source "../components";
 
 @theme inline {
   --color-canvas: var(--theme-canvas);
