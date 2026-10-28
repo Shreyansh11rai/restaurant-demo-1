@@ -12,6 +12,7 @@ import { themes } from "@/lib/themes";
 import Header from "@/components/sections/header";
 import Footer from "@/components/sections/footer";
 import Actions from "@/components/sections/actions";
+import ScrollAnimations from "@/components/ui/ScrollAnimations";
 import "./globals.css";
 
 const cormorant = Cormorant_Garamond({
@@ -65,6 +66,7 @@ export default function RootLayout({
           Skip to content
         </a>
         <Header />
+        <ScrollAnimations />
         {children}
         <Footer />
         <Actions />
