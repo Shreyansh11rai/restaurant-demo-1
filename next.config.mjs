@@ -1,17 +1,15 @@
 /** @type {import('next').NextConfig} */
+
+const isProd = process.env.NODE_ENV === "production";
+const repo = "restaurant-demo-1";
+
 const nextConfig = {
   output: "export",
-  trailingSlash: true,
   images: { unoptimized: true },
-  basePath: process.env.NEXT_PUBLIC_BASE_PATH ?? "",
-  turbopack: {
-    rules: {
-      "*.css": {
-        loaders: ["@tailwindcss/turbopack"],
-        as: "*.css",
-      },
-    },
-  },
+  basePath: isProd ? `/${repo}` : "",
+  assetPrefix: isProd ? `/${repo}/` : "",
+  env: { NEXT_PUBLIC_BASE_PATH: isProd ? `/${repo}` : "" },
+  trailingSlash: true,
 };
 
 export default nextConfig;
