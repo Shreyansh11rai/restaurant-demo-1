@@ -12,7 +12,7 @@ export default function Contact1({ compact = false }: { compact?: boolean }) {
         <ContactInfo showActions={false} />
       ) : (
         <>
-          <div className="contact-split grid gap-4 md:grid-cols-2">
+          <div className="contact-split grid gap-6 md:grid-cols-2 mb-6">
             <ContactInfo />
             <MapEmbed />
           </div>

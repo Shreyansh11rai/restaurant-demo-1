@@ -14,7 +14,7 @@ Build a static, mobile-first restaurant website in Next.js. Every section has 3 
 - Keep component-specific styling in Tailwind utility classes in the owning component's `className`; `globals.css` is for theme tokens and truly global styles only.
 - Support a base path: all local asset URLs (images, PDFs) go through `withBase()` in `src/lib/withBase.ts`, which prefixes `process.env.NEXT_PUBLIC_BASE_PATH ?? ""`.
 
-## Pages (exactly these 6, nothing else)
+## Public pages (exactly these 6)
 
 | Route           | Contents                                                                                        |
 | --------------- | ----------------------------------------------------------------------------------------------- |
@@ -26,6 +26,8 @@ Build a static, mobile-first restaurant website in Next.js. Every section has 3 
 | `/contact`      | Contact section (full: info, reservation form, map)                                             |
 
 Every page also renders Header, Footer and Floating Actions. Do not add other pages (no blog, no offers page, no cart, no login).
+
+The unlinked `/theme` developer reference page may show theme tokens. Keep it out of `content.seo` and `sitemap.ts`, and mark it `noindex`.
 
 ## Files and folders
 
@@ -52,7 +54,7 @@ src/
     ui/          Lightbox.tsx, Button.tsx, DownloadMenuButtons.tsx, SectionTitle.tsx
   app/
     layout.tsx, page.tsx, sitemap.ts, robots.ts
-    menu/page.tsx, gallery/page.tsx, about/page.tsx, testimonials/page.tsx, contact/page.tsx
+    menu/page.tsx, gallery/page.tsx, about/page.tsx, testimonials/page.tsx, contact/page.tsx, theme/page.tsx
 public/
   images/    <- all site images
   menu/      <- menu.pdf and menu page images (menu-1.jpg, menu-2.jpg ...)
@@ -280,7 +282,7 @@ Derive `--theme-primary-hover`, `--theme-surface-muted`, `--theme-muted` and `--
 ## Done when
 
 - `npm run build` succeeds for the default config and for each of these: every `layout` key set to 2, then to 3, and each `theme` value.
-- All 6 pages render with sample data and no console errors.
+- All 6 public pages render with sample data and no console errors.
 - Menu PDF and image downloads work, including under a non-empty `NEXT_PUBLIC_BASE_PATH`.
 - Searching `src/components` finds no hardcoded phone numbers, prices or business names.
 - Lighthouse mobile: Performance 90+, Accessibility 95+, SEO 95+ on the Home page.

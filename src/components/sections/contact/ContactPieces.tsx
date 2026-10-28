@@ -65,7 +65,7 @@ export function MapEmbed() {
   );
 }
 
-export function ReservationForm() {
+export function ReservationForm({ className }: { className?: string }) {
   function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const form = new FormData(event.currentTarget);
@@ -88,7 +88,7 @@ export function ReservationForm() {
 
   return (
     <form
-      className="reservation-form grid gap-4 rounded-theme border border-border bg-surface p-6 shadow-lg md:max-w-form md:p-8"
+      className={`reservation-form grid gap-4 rounded-theme border border-border bg-surface p-6 shadow-lg md:max-w-form mx-auto md:p-8 ${className}`}
       onSubmit={submit}
     >
       <h2 className="mb-0">{content.ui.reserve}</h2>

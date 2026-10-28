@@ -1,5 +1,7 @@
 import { content } from "@/data/content";
 import { buildWhatsAppUrl } from "@/lib/whatsapp";
+import { BiPhone } from "react-icons/bi";
+import { BsWhatsapp } from "react-icons/bs";
 
 export default function Actions1() {
   return (
@@ -13,7 +15,7 @@ export default function Actions1() {
           href={`tel:${content.contact.phone}`}
           aria-label={content.ui.call}
         >
-          ☎
+          <BiPhone />
         </a>
       ) : null}
       {content.contact.whatsapp ? (
@@ -24,7 +26,7 @@ export default function Actions1() {
           rel="noreferrer"
           aria-label={content.ui.bookWhatsApp}
         >
-          ✉
+          <BsWhatsapp fill="green" />
         </a>
       ) : null}
     </div>
